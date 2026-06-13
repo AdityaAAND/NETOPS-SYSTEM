@@ -1,9 +1,0 @@
-OSPF Routing Loop
-
-BGP Neighbour Down
-
-Interface Flapping
-
-Packet Loss
-
-Port Security Violation
