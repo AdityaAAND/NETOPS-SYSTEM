@@ -1,0 +1,19 @@
+Command:
+show ip ospf neighbor
+
+Output:
+
+Neighbor ID     State     Dead Time     Address
+
+2.2.2.2         FULL      00:00:32      10.0.12.2
+3.3.3.3         FULL      00:00:35      10.0.13.3
+
+Recent Events:
+
+OSPF adjacency reset detected 17 times in the last 10 minutes.
+
+SPF recalculation count:
+143
+
+Observation:
+Frequent adjacency resets indicate routing instability.

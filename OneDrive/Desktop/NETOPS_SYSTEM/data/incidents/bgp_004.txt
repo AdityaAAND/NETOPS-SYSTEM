@@ -1,0 +1,42 @@
+Incident ID: BGP-004
+
+Timestamp:
+2026-06-09 16:05:51
+
+Severity:
+High
+
+Device:
+Border-Router-3
+
+Alert:
+BGP Peer Unreachable
+
+Symptoms:
+
+* Loss of connectivity to partner network
+* Missing external routes
+* Increased traffic on backup paths
+
+Diagnostics:
+show ip bgp summary:
+Neighbor State: Active
+
+show ip route:
+No route to peer address
+
+show logging:
+Reachability check failures
+
+Root Cause:
+Static route deletion removed the path required to reach the BGP peer, preventing session establishment.
+
+Resolution:
+
+1. Restore missing static route.
+2. Verify peer reachability.
+3. Re-establish BGP session.
+4. Validate route exchange.
+
+Status:
+Resolved

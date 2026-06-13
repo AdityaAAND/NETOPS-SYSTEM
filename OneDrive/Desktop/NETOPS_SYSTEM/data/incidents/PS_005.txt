@@ -1,0 +1,37 @@
+Incident ID: PS-005
+
+Timestamp:
+2026-06-11 09:18:23
+
+Severity:
+Medium
+
+Device:
+Switch-S10
+
+Alert:
+Port Security Alert Triggered
+
+Symptoms:
+
+* Temporary connectivity loss
+* Security event notification
+
+Diagnostics:
+show port-security:
+Violation mode activated
+
+show logging:
+MAC movement detected
+
+Root Cause:
+User connected docking station with multiple network adapters.
+
+Resolution:
+
+1. Review authorized devices.
+2. Adjust MAC limit if required.
+3. Re-enable secure port.
+
+Status:
+Resolved

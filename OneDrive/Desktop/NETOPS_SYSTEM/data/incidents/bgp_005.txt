@@ -1,0 +1,43 @@
+Incident ID: BGP-005
+
+Timestamp:
+2026-06-11 21:34:08
+
+Severity:
+Critical
+
+Device:
+Edge-Router-5
+
+Alert:
+Routing Instability Detected
+
+Symptoms:
+
+* Sudden traffic rerouting
+* Increased latency
+* Route oscillation observed
+* User complaints of intermittent connectivity
+
+Diagnostics:
+show ip bgp:
+AS Path inconsistencies detected
+
+show ip bgp summary:
+Session Established
+
+show logging:
+Abnormal route advertisements observed
+
+Root Cause:
+Incorrect Autonomous System (AS) number configuration resulted in invalid route advertisements and routing instability.
+
+Resolution:
+
+1. Correct BGP ASN configuration.
+2. Clear BGP session.
+3. Verify advertised routes.
+4. Confirm routing stability.
+
+Status:
+Resolved

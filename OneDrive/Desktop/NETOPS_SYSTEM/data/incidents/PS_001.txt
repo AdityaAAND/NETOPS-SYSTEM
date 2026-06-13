@@ -1,0 +1,37 @@
+Incident ID: PS-001
+
+Timestamp:
+2026-06-03 07:42:19
+
+Severity:
+High
+
+Device:
+Switch-S6
+
+Alert:
+Port Security Violation
+
+Symptoms:
+
+* Endpoint disconnected
+* Security alerts generated
+
+Diagnostics:
+show port-security:
+Violation count increased
+
+show mac address-table:
+Unknown MAC detected
+
+Root Cause:
+Unauthorized device connected to secure port.
+
+Resolution:
+
+1. Disconnect unauthorized device.
+2. Review access policies.
+3. Re-enable interface.
+
+Status:
+Resolved

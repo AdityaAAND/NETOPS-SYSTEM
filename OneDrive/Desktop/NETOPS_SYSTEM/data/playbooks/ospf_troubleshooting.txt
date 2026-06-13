@@ -1,0 +1,20 @@
+Title:
+OSPF Troubleshooting Guide
+
+Purpose:
+Diagnose OSPF routing issues and routing loops.
+
+Steps:
+
+1. Check CPU utilization.
+
+2. Check OSPF neighbor status.
+
+3. Verify route redistribution policies.
+
+4. Review routing table consistency.
+
+5. Reset adjacency if required.
+
+Expected Outcome:
+Stable OSPF neighbor relationships.

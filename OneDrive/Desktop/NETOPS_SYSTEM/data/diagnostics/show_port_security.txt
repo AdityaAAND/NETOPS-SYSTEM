@@ -1,0 +1,26 @@
+Command:
+show port-security
+
+Output:
+
+Interface:
+FastEthernet0/24
+
+Port Status:
+Secure-Shutdown
+
+Violation Count:
+12
+
+Maximum MAC Addresses:
+1
+
+Current MAC Addresses:
+3
+
+Recent Event:
+
+Unauthorized MAC address detected.
+
+Observation:
+Port security violation triggered due to multiple MAC addresses appearing on a restricted access port.
