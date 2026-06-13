@@ -1,0 +1,38 @@
+Incident ID: IF-001
+
+Timestamp:
+2026-06-03 09:14:27
+
+Severity:
+High
+
+Device:
+Switch-S1
+
+Alert:
+Interface Gig0/1 Flapping
+
+Symptoms:
+
+* Frequent connectivity interruptions
+* Link state changing repeatedly
+* Increased packet retransmissions
+
+Diagnostics:
+show interfaces Gig0/1:
+Interface changed state 23 times in 15 minutes
+
+show logging:
+LINK-3-UPDOWN messages observed
+
+Root Cause:
+Damaged Ethernet cable causing intermittent connectivity.
+
+Resolution:
+
+1. Replace Ethernet cable.
+2. Verify physical connection.
+3. Monitor interface stability.
+
+Status:
+Resolved

@@ -1,0 +1,21 @@
+Command:
+show ip bgp summary
+
+Output:
+
+Neighbor        AS      State
+
+192.168.100.1   65001   Idle
+192.168.100.2   65002   Established
+
+Messages:
+
+Authentication failure detected for neighbor 192.168.100.1
+
+Prefixes Received:
+
+Neighbor 192.168.100.1 : 0
+Neighbor 192.168.100.2 : 412
+
+Observation:
+One BGP peer is failing authentication and not exchanging routes.

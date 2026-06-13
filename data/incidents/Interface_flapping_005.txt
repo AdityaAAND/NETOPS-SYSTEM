@@ -1,0 +1,38 @@
+Incident ID: IF-005
+
+Timestamp:
+2026-06-11 19:12:30
+
+Severity:
+High
+
+Device:
+Switch-S5
+
+Alert:
+Repeated Link Failures
+
+Symptoms:
+
+* Frequent workstation disconnects
+* Network interruptions
+* Interface resets
+
+Diagnostics:
+show logging:
+Multiple interface resets
+
+show interfaces:
+No configuration issues found
+
+Root Cause:
+Power fluctuations affecting interface hardware.
+
+Resolution:
+
+1. Verify power supply.
+2. Replace unstable PSU.
+3. Monitor interface uptime.
+
+Status:
+Resolved

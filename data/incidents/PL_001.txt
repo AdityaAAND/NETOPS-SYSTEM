@@ -1,0 +1,38 @@
+Incident ID: PL-001
+
+Timestamp:
+2026-06-02 13:16:44
+
+Severity:
+Critical
+
+Device:
+Router-R6
+
+Alert:
+Packet Loss Exceeded 25%
+
+Symptoms:
+
+* Application timeouts
+* Slow network performance
+* Increased retransmissions
+
+Diagnostics:
+show interfaces:
+CRC errors detected
+
+ping test:
+27% packet loss observed
+
+Root Cause:
+Damaged fiber optic cable.
+
+Resolution:
+
+1. Replace fiber segment.
+2. Verify link quality.
+3. Re-run connectivity tests.
+
+Status:
+Resolved

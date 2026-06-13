@@ -1,0 +1,38 @@
+Incident ID: PL-004
+
+Timestamp:
+2026-06-08 22:08:57
+
+Severity:
+High
+
+Device:
+Edge-Router-4
+
+Alert:
+Intermittent Packet Loss
+
+Symptoms:
+
+* Cloud application failures
+* Delayed responses
+* Session interruptions
+
+Diagnostics:
+show interfaces:
+Optical signal warnings
+
+show transceiver:
+Power levels below threshold
+
+Root Cause:
+Failing optical transceiver.
+
+Resolution:
+
+1. Replace transceiver.
+2. Verify signal strength.
+3. Monitor packet delivery.
+
+Status:
+Resolved

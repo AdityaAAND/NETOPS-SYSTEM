@@ -1,0 +1,111 @@
+Title:
+BGP Fundamentals and Troubleshooting Reference
+
+Overview:
+
+BGP (Border Gateway Protocol) is the primary routing protocol used to exchange routing information between autonomous systems (AS).
+
+BGP is commonly used by:
+
+* Internet Service Providers
+* Cloud Providers
+* Large Enterprises
+
+Key Concepts:
+
+1. Autonomous System (AS)
+
+An Autonomous System is a network managed under a single administrative authority.
+
+Examples:
+
+* AS65001
+* AS65002
+
+2. BGP Neighbor
+
+Routers establish peer relationships with BGP neighbors.
+
+Common Neighbor States:
+
+* Idle
+* Connect
+* Active
+* OpenSent
+* OpenConfirm
+* Established
+
+A healthy BGP session remains in the ESTABLISHED state.
+
+3. Route Advertisement
+
+BGP peers exchange route advertisements to share reachable networks.
+
+Incorrect advertisements may cause routing instability.
+
+4. Prefix Filtering
+
+Organizations use prefix filters to control which routes are accepted or advertised.
+
+Misconfigured filters may block valid routes.
+
+5. Authentication
+
+BGP sessions can be secured using MD5 authentication.
+
+Authentication mismatches commonly cause session failures.
+
+Common Issues:
+
+BGP Neighbor Down
+
+Symptoms:
+
+* Loss of external connectivity
+* Missing routes
+* Increased latency
+
+Possible Causes:
+
+* Authentication mismatch
+* ASN mismatch
+* Peer unreachable
+* Firewall restrictions
+
+Route Flapping
+
+Symptoms:
+
+* Frequent route changes
+* Network instability
+* Increased convergence times
+
+Possible Causes:
+
+* Unstable links
+* Hardware failures
+* Misconfiguration
+
+Useful Commands:
+
+show ip bgp summary
+
+show ip bgp
+
+show running-config
+
+ping <peer-ip>
+
+Best Practices:
+
+* Use route filtering carefully.
+* Verify ASN configurations.
+* Monitor session stability.
+* Enable authentication for external peers.
+
+Expected Healthy Indicators:
+
+* Neighbor state is ESTABLISHED.
+* Stable route advertisements.
+* Consistent prefix counts.
+* Low route churn.

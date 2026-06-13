@@ -1,0 +1,37 @@
+Incident ID: PL-005
+
+Timestamp:
+2026-06-10 14:55:26
+
+Severity:
+Medium
+
+Device:
+Router-R8
+
+Alert:
+Packet Loss Detected
+
+Symptoms:
+
+* Occasional application lag
+* Reduced throughput
+
+Diagnostics:
+show interfaces:
+Queue drops observed
+
+show traffic:
+Burst traffic patterns detected
+
+Root Cause:
+Buffer exhaustion during peak traffic periods.
+
+Resolution:
+
+1. Tune queue settings.
+2. Apply traffic shaping.
+3. Monitor performance.
+
+Status:
+Resolved

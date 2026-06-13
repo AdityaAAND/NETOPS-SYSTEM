@@ -1,0 +1,25 @@
+Command:
+show interfaces
+
+Output:
+
+Interface:
+GigabitEthernet0/1
+
+Status:
+UP
+
+Input Errors:
+1342
+
+CRC Errors:
+1187
+
+Output Drops:
+95
+
+Link State Changes:
+27
+
+Observation:
+Physical layer issues detected. High CRC and input errors suggest cable or transceiver problems.
