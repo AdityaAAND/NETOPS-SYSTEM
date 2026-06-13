@@ -1,0 +1,43 @@
+Incident ID: OSPF-002
+
+Timestamp:
+2026-06-03 14:42:08
+
+Severity:
+High
+
+Device:
+Router-R2
+
+Alert:
+Network latency exceeded threshold
+
+Symptoms:
+
+* Average latency above 300 ms
+* Packet loss around 15%
+* Increased routing updates
+* OSPF instability reported
+
+Diagnostics:
+show ip ospf database:
+LSA updates occurring excessively
+
+show process cpu:
+CPU utilization for five seconds: 94%
+
+show logging:
+Repeated SPF calculations detected
+
+Root Cause:
+Incorrect route summarization created a routing loop causing continuous route recalculations.
+
+Resolution:
+
+1. Correct route summarization configuration.
+2. Flush invalid routes.
+3. Recalculate OSPF topology.
+4. Monitor LSA update frequency.
+
+Status:
+Resolved

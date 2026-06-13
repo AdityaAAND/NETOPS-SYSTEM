@@ -1,0 +1,43 @@
+Incident ID: OSPF-005
+
+Timestamp:
+2026-06-10 11:56:13
+
+Severity:
+Critical
+
+Device:
+Router-R5
+
+Alert:
+Network-wide performance degradation detected
+
+Symptoms:
+
+* CPU utilization above 99%
+* Packet loss reaching 28%
+* OSPF adjacency instability
+* Slow application response times
+
+Diagnostics:
+show process cpu:
+CPU utilization for five seconds: 99%
+
+show ip ospf neighbor:
+Multiple adjacency resets detected
+
+show ip route:
+Rapid route changes observed
+
+Root Cause:
+A newly introduced redistribution policy created a routing loop across multiple OSPF areas.
+
+Resolution:
+
+1. Roll back recent configuration changes.
+2. Remove problematic redistribution policy.
+3. Clear OSPF process.
+4. Validate route propagation across all areas.
+
+Status:
+Resolved

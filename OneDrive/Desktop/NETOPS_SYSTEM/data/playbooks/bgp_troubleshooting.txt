@@ -1,0 +1,45 @@
+Title:
+BGP Neighbor Failure Troubleshooting Guide
+
+Purpose:
+Diagnose BGP session failures and route exchange issues.
+
+Symptoms:
+
+* BGP Neighbor Down
+* Missing external routes
+* Increased latency
+* Connectivity loss
+
+Investigation Steps:
+
+1. Verify BGP neighbor status.
+   Command:
+   show ip bgp summary
+
+2. Check peer reachability.
+   Command:
+   ping <peer-ip>
+
+3. Review authentication settings.
+
+4. Examine route advertisements.
+
+5. Verify ASN configuration.
+
+Root Cause Indicators:
+
+* Neighbor state Idle
+* Authentication failures
+* ASN mismatch
+* Prefix filtering errors
+
+Recommended Resolution:
+
+1. Correct authentication configuration.
+2. Verify ASN settings.
+3. Restore peer connectivity.
+4. Refresh BGP session.
+
+Expected Outcome:
+Stable BGP session and successful route exchange.

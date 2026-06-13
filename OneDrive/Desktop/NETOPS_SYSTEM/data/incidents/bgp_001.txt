@@ -1,0 +1,43 @@
+Incident ID: BGP-001
+
+Timestamp:
+2026-06-02 10:18:45
+
+Severity:
+Critical
+
+Device:
+Edge-Router-1
+
+Alert:
+BGP Neighbor Session Down
+
+Symptoms:
+
+* Loss of external connectivity
+* Routes withdrawn from ISP
+* Increased application timeouts
+* Traffic rerouted through backup link
+
+Diagnostics:
+show ip bgp summary:
+Neighbor 192.168.100.1 State: Idle
+
+show logging:
+BGP authentication failed
+
+show running-config:
+Recent BGP password change detected
+
+Root Cause:
+MD5 authentication mismatch between the router and ISP peer caused the BGP session to fail.
+
+Resolution:
+
+1. Verify BGP authentication password.
+2. Update configuration to match ISP settings.
+3. Reset BGP session.
+4. Confirm route exchange.
+
+Status:
+Resolved

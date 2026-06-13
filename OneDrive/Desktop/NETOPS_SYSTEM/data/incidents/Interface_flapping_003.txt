@@ -1,0 +1,38 @@
+Incident ID: IF-003
+
+Timestamp:
+2026-06-07 16:35:42
+
+Severity:
+High
+
+Device:
+Access-Switch-3
+
+Alert:
+Frequent Interface State Changes
+
+Symptoms:
+
+* Voice call interruptions
+* Network instability
+* Device reconnect events
+
+Diagnostics:
+show interfaces status:
+Port transitions detected repeatedly
+
+show logging:
+Interface reset events observed
+
+Root Cause:
+Loose fiber connector causing intermittent signal loss.
+
+Resolution:
+
+1. Re-seat fiber connector.
+2. Clean optical interfaces.
+3. Validate signal levels.
+
+Status:
+Resolved
