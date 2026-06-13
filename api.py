@@ -1,5 +1,7 @@
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
+from prometheus_fastapi_instrumentator import Instrumentator
+import requests
 import sys
 import os
 
@@ -20,6 +22,7 @@ app = FastAPI(
     description="Multi-Agent Network Root Cause Analysis System",
     version="1.0"
 )
+Instrumentator().instrument(app).expose(app)
 
 
 class AlertRequest(BaseModel):
@@ -52,3 +55,18 @@ def analyze_alert(request: AlertRequest):
             status_code=500,
             detail=str(e)
         )
+    
+
+@app.get("/system-metrics")
+def system_metrics():
+
+    query_url = "http://localhost:9090/api/v1/query"
+
+    response = requests.get(
+        query_url,
+        params={
+            "query": "http_requests_total"
+        }
+    )
+
+    return response.json()
