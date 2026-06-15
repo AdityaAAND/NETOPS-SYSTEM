@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NetOps AI - Multi-Agent RCA Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="shell">
+      <header class="topbar">
+        <a class="brand" href="#" aria-label="NetOps AI home">
+          <span class="brand-mark">N</span>
+          <span>
+            <strong>NetOps AI</strong>
+            <small>Root Cause Analysis</small>
+          </span>
+        </a>
+        <nav class="nav-links" aria-label="Dashboard sections">
+          <a href="#analysis">Analysis</a>
+          <a href="#metrics">Metrics</a>
+          <a href="#workflow">Agents</a>
+        </nav>
+        <div class="status-pill">
+          <span class="pulse"></span>
+          Demo Ready
+        </div>
+      </header>
+
+      <main>
+        <section class="hero" aria-labelledby="hero-title">
+          <div class="hero-copy">
+            <span class="eyebrow">Multi-agent incident intelligence</span>
+            <h1 id="hero-title">NetOps AI - Multi-Agent Root Cause Analysis System</h1>
+            <p>
+              A cybersecurity and network operations dashboard that converts noisy alerts into
+              structured investigation plans, retrieved operational knowledge, diagnostics, root
+              cause hypotheses, and remediation recommendations.
+            </p>
+            <div class="hero-actions">
+              <a class="primary-link" href="#analysis">Run RCA</a>
+              <a class="secondary-link" href="#workflow">View Agent Flow</a>
+            </div>
+          </div>
+
+          <aside class="signal-panel" aria-label="Live operations summary">
+            <div class="scan-grid"></div>
+            <div class="signal-header">
+              <span>Network Pulse</span>
+              <strong>Live Demo</strong>
+            </div>
+            <div class="signal-chart" aria-hidden="true">
+              <span style="height: 42%"></span>
+              <span style="height: 74%"></span>
+              <span style="height: 51%"></span>
+              <span style="height: 88%"></span>
+              <span style="height: 67%"></span>
+              <span style="height: 45%"></span>
+              <span style="height: 79%"></span>
+              <span style="height: 56%"></span>
+            </div>
+            <div class="signal-footer">
+              <div>
+                <small>Severity</small>
+                <strong>High</strong>
+              </div>
+              <div>
+                <small>MTTR Target</small>
+                <strong>12 min</strong>
+              </div>
+              <div>
+                <small>Confidence</small>
+                <strong>91%</strong>
+              </div>
+            </div>
+          </aside>
+        </section>
+
+        <section class="panel analyze-panel" id="analysis" aria-labelledby="analysis-title">
+          <div class="section-heading">
+            <div>
+              <span class="eyebrow">Alert intake</span>
+              <h2 id="analysis-title">Analyze Network Alert</h2>
+            </div>
+            <span class="api-badge" id="apiBadge">Mock API standby</span>
+          </div>
+
+          <form class="alert-form" id="alertForm">
+            <label for="alertInput">Alert details</label>
+            <textarea
+              id="alertInput"
+              rows="5"
+              placeholder="Example: CPU utilization 98% on core-router-01 with OSPF adjacency resets and packet loss to branch VLANs."
+            >CPU utilization 98% on core-router-01 with OSPF adjacency resets and intermittent packet loss across branch VLANs.</textarea>
+            <div class="form-actions">
+              <button class="analyze-button" type="submit">
+                <span class="button-icon" aria-hidden="true"></span>
+                Analyze
+              </button>
+              <button class="ghost-button" type="button" id="sampleButton">Load Sample</button>
+            </div>
+          </form>
+
+          <div class="loading" id="loadingState" aria-live="polite" aria-hidden="true">
+            <div class="loader"></div>
+            <span>Agents are correlating telemetry, knowledge, and diagnostics...</span>
+          </div>
+        </section>
+
+        <section class="results-grid" aria-label="Analysis results">
+          <article class="result-card">
+            <div class="card-title">
+              <span class="card-icon plan"></span>
+              <h3>Investigation Plan</h3>
+            </div>
+            <ul id="planList"></ul>
+          </article>
+
+          <article class="result-card">
+            <div class="card-title">
+              <span class="card-icon knowledge"></span>
+              <h3>Retrieved Knowledge</h3>
+            </div>
+            <ul id="knowledgeList"></ul>
+          </article>
+
+          <article class="result-card">
+            <div class="card-title">
+              <span class="card-icon diagnostics"></span>
+              <h3>Diagnostics</h3>
+            </div>
+            <ul id="diagnosticsList"></ul>
+          </article>
+
+          <article class="result-card highlight-card">
+            <div class="card-title">
+              <span class="card-icon root"></span>
+              <h3>Root Cause Analysis</h3>
+            </div>
+            <p id="rootCauseText"></p>
+          </article>
+
+          <article class="result-card recommendation-card">
+            <div class="card-title">
+              <span class="card-icon recommend"></span>
+              <h3>Recommendation</h3>
+            </div>
+            <p id="recommendationText"></p>
+          </article>
+        </section>
+
+        <section class="panel" id="metrics" aria-labelledby="metrics-title">
+          <div class="section-heading">
+            <div>
+              <span class="eyebrow">Prometheus snapshot</span>
+              <h2 id="metrics-title">Operations Metrics</h2>
+            </div>
+            <span class="timestamp" id="timestamp"></span>
+          </div>
+          <div class="metrics-grid" id="metricsGrid"></div>
+        </section>
+
+        <section class="panel workflow-panel" id="workflow" aria-labelledby="workflow-title">
+          <div class="section-heading">
+            <div>
+              <span class="eyebrow">Agent orchestration</span>
+              <h2 id="workflow-title">Planner to Decision Workflow</h2>
+            </div>
+          </div>
+          <div class="workflow" id="workflowTrack" aria-label="Agent workflow">
+            <div class="agent-node active">
+              <span>01</span>
+              <strong>Planner</strong>
+              <small>Scope incident</small>
+            </div>
+            <div class="agent-node">
+              <span>02</span>
+              <strong>Knowledge</strong>
+              <small>Retrieve context</small>
+            </div>
+            <div class="agent-node">
+              <span>03</span>
+              <strong>Diagnostic</strong>
+              <small>Inspect signals</small>
+            </div>
+            <div class="agent-node">
+              <span>04</span>
+              <strong>Review</strong>
+              <small>Correlate evidence</small>
+            </div>
+            <div class="agent-node">
+              <span>05</span>
+              <strong>Decision</strong>
+              <small>Recommend fix</small>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
