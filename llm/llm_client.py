@@ -15,7 +15,7 @@ client = OpenAI(
 class LLMClient:
     def __init__ (self):
         self.client = OpenAI(
-            api_key = os.getenv("OPOENAI_API_KEY")
+            api_key = os.getenv("OPENAI_API_KEY")
         )
 
     def generate(

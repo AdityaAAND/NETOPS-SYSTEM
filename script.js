@@ -103,8 +103,21 @@ function normalizeApiResponse(payload) {
     diagnostics: payload.diagnostics || fallbackAnalysis.diagnostics,
     rootCause: payload.rootCause || payload.root_cause || payload.rca || fallbackAnalysis.rootCause,
     recommendation: payload.recommendation || payload.recommendations || fallbackAnalysis.recommendation,
-    metrics: payload.metrics || fallbackAnalysis.metrics
+    metrics: payload.metrics || fallbackAnalysis.metrics,
+    source: payload.source || "api"
   };
+}
+
+function updateApiBadge(source) {
+  const labels = {
+    live_openai: "Live OpenAI RCA",
+    rules_engine: "Live RCA rules engine",
+    rules_engine_openai_error: "RCA fallback active",
+    vercel_mock_api: "Mock API response"
+  };
+
+  apiBadge.textContent = labels[source] || "Live API response";
+  apiBadge.classList.toggle("mock", source !== "live_openai");
 }
 
 async function analyzeAlert(alertText) {
@@ -120,9 +133,9 @@ async function analyzeAlert(alertText) {
     }
 
     const payload = await response.json();
-    apiBadge.textContent = "Live API response";
-    apiBadge.classList.remove("mock");
-    return normalizeApiResponse(payload);
+    const analysis = normalizeApiResponse(payload);
+    updateApiBadge(analysis.source);
+    return analysis;
   } catch (error) {
     await new Promise((resolve) => setTimeout(resolve, 900));
     apiBadge.textContent = "Mock API response";
