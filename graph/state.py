@@ -1,6 +1,8 @@
-from typing import TypedDict, List
+from typing import TypedDict, List , Any
 
 class NetOpsState(TypedDict):
+
+    messages:List[Any]
 
     # Original alert
     alert: str

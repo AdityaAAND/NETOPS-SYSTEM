@@ -1,0 +1,23 @@
+planner:
+  agent_id: "c23a9470-944b-4f4b-b511-15be9b933fec"
+  api_key: "band_a_1781335250_OvoiG7VAvJy3P5Othyk6r8koyJzO-kxq"
+
+knowledge:
+  agent_id: "4c9ffaba-cc83-42e3-b80c-9640332a2ad3"
+  api_key: "band_a_1781335275_aD8Um1w1a0oNWX-69VaMt5pRJYE7zGl1"
+
+diagnostic:
+  agent_id: "34109199-f54a-4649-b699-7e14a3f3f44e"
+  api_key: "band_a_1781335318_dvNRvAzlvdVgEJGox-nY5ada0Gp4uawi"
+
+review:
+  agent_id: "1dafe33a-6781-4670-b79b-4595b68a1d72"
+  api_key: "band_a_1781335342_uM0y93-aBSJfth-eVT4u4upg3Cm7W1_0"
+
+decision:
+  agent_id: "513ee533-1cf7-411b-9840-1e006180f629"
+  api_key: "band_a_1781335363_Q1w1qRCWnrEFv6L-IiXcocG7S2NWXekO"
+
+netops:
+  agent_id: "fbc33b9b-474b-40b4-a9fe-9dde76534c05"
+  api_key: "band_a_1781406995_SjOR37XeCOOlu_8yuYhRVBP4fNPUUuqO"

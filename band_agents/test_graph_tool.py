@@ -11,7 +11,7 @@ project_root = os.path.abspath(
 sys.path.insert(0, project_root)
 
 from graph.workflow import graph
-from band.integrations.langgraph import graph_as_tool
+from band_agents.integrations.langgraph import graph_as_tool
 
 tool = graph_as_tool(
     graph=graph,
